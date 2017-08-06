@@ -1,0 +1,49 @@
+# Saint-s-Basic-Python-Programs
+
+import random
+import time
+
+def dieroll():
+  die_amount = input("\nHow many dice would you like to throw? ")
+  roll_amount = input("\nHow many rolls would you like to throw? ")
+  while times_rolled < int(roll_amount):
+    print ("\nRolling the dice...")
+    #This sleep function is for dramatic effect:
+    time.sleep(2.5)
+    roll = random.randrange(int(die_amount), int(die_amount)*6)
+    print ("\nYou rolled a {}!".format(roll))
+    times_rolled += 1
+  rollagain()
+  
+def rollagain():
+    print("\nWould you like to roll again?\n")  
+    print ("1.) Yes")
+    print ("2.) No")
+    roll_again = input()
+    if roll_again == "1":
+        dieroll() 
+    elif roll_again == "2":
+        exit()
+    #^^You may have to remove the quotes for these numbers, depending on what you run it on.
+    else:
+        print ("\nI cannot understand that, unfortunately.")
+        time.sleep(2)
+        #This sleep function is meant to give them time to read.
+        rollagain()
+
+dieroll()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
